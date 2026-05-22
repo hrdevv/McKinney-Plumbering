@@ -2,5 +2,7 @@
   "name": "McKinney Plumbing Services LLC",
   "description": "Premium local plumbing services in Peach Bottom, southern Lancaster County PA, and adjacent PA/MD border communities.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"],
+  "hideLogoWidget": true,
+  "disableEditWithLovable": true
 }
