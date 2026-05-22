@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;705;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-display: "Outfit", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #091522;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, th {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom micro-animations for high-fidelity interactive accents */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-8deg); }
+  30% { transform: rotate(7deg); }
+  45% { transform: rotate(-5deg); }
+  60% { transform: rotate(4deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 2.2s infinite ease-in-out;
+}
+
+/* Scrollbar formatting */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #091522;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8581C;
+}
+
+/* Premium Light Theme overrides for Daylight Mode */
+.theme-day {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.theme-day #top-announcement-banner {
+  background-color: #bd1c2a !important; /* warm red alert */
+}
+
+/* Header overlays */
+.theme-day #top-bar-ticker {
+  background-color: #f1f5f9 !important;
+  border-bottom-color: #cbd5e1 !important;
+}
+
+.theme-day #top-bar-ticker span,
+.theme-day #top-bar-ticker div {
+  color: #334155 !important;
+}
+
+.theme-day #main-app-header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05) !important;
+}
+
+.theme-day #main-app-header a,
+.theme-day #main-app-header button,
+.theme-day #main-app-header span,
+.theme-day #main-app-header svg {
+  color: #0f172a !important;
+}
+
+/* Mobile dropdown container and items */
+.theme-day #mobile-menu {
+  background-color: #ffffff !important;
+  border-bottom-color: #cbd5e1 !important;
+}
+
+.theme-day #mobile-menu button {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.theme-day #mobile-menu button:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.theme-day #mobile-menu .bg-slate-900\/60,
+.theme-day #mobile-menu .bg-slate-900 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Override dark containers with clean white cards */
+.theme-day .bg-slate-950,
+.theme-day .bg-[#091522],
+.theme-day .bg-slate-950\/40,
+.theme-day .bg-slate-950\/80,
+.theme-day .bg-slate-900\/40,
+.theme-day .bg-slate-900\/65,
+.theme-day .bg-slate-900\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+.theme-day .bg-slate-900,
+.theme-day .bg-[#0b1c2e],
+.theme-day .bg-[#0b1c2e]\/95,
+.theme-day .bg-[#0c1e30],
+.theme-day .bg-[#0F2A44],
+.theme-day .bg-[#0F2A44]\/95 {
+  background-color: #ffffff !important;
+}
+
+.theme-day .border-slate-800,
+.theme-day .border-slate-801,
+.theme-day .border-slate-805,
+.theme-day .border-slate-850,
+.theme-day .border-slate-755,
+.theme-day .border-slate-750,
+.theme-day .border-slate-700\/60,
+.theme-day .border-slate-800\/80 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Ensure text readability in light theme */
+.theme-day .text-white,
+.theme-day .text-slate-100,
+.theme-day .text-slate-200,
+.theme-day .text-slate-300,
+.theme-day .text-slate-305 {
+  color: #0f172a !important;
+}
+
+.theme-day .text-slate-400,
+.theme-day .text-slate-350,
+.theme-day .text-slate-450 {
+  color: #334155 !important;
+}
+
+.theme-day .text-slate-500,
+.theme-day .text-slate-505,
+.theme-day .text-slate-600 {
+  color: #475569 !important;
+}
+
+/* Keep accent colors pop */
+.theme-day .text-\[\#E8551C\],
+.theme-day .text-\[\#E8581C\],
+.theme-day .text-orange-500 {
+  color: #E8581C !important;
+}
+.theme-day .bg-\[\#E8581C\]\/10,
+.theme-day .bg-\[\#E8581C\]\/15 {
+  background-color: rgba(232, 88, 28, 0.08) !important;
+}
+.theme-day .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+/* Hero container background styling tweaks */
+.theme-day #hero-banner-section {
+  background-color: #f8fafc !important;
+}
+.theme-day #hero-background-img {
+  opacity: 0.12 !important;
+}
+.theme-day #hero-banner-section .bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(248, 250, 252, 0.98), rgba(241, 245, 249, 0.85), rgba(241, 245, 249, 0.6)) !important;
+}
+
+/* Ensure headings display boldly in dark charcoal */
+.theme-day h1,
+.theme-day h2,
+.theme-day h3,
+.theme-day h4,
+.theme-day .font-bold,
+.theme-day .font-black {
+  color: #0f172a !important;
+}
+
+/* Fix tabs navigation so they feel responsive in light mode */
+.theme-day .text-slate-305:hover,
+.theme-day .text-slate-400:hover {
+  color: #0f172a !important;
+}
+
+/* Dynamic theme active tabs styling in FAQ select list or other buttons */
+.theme-day #faq-accordions button[id^="faq-tab-"] {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+.theme-day #faq-accordions button[id^="faq-tab-"].bg-\[\#E8581C\] {
+  background-color: #E8581C !important;
+  color: #ffffff !important;
+}
+
+/* Form component inputs inside QuoteForm and diagnostic fields */
+.theme-day input,
+.theme-day select,
+.theme-day textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-day input::placeholder,
+.theme-day textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Mobile lower sticky bar */
+.theme-day #mobile-sticky-action-bar {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-top-color: #cbd5e1 !important;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.06) !important;
+}
+.theme-day #mobile-sticky-action-bar span,
+.theme-day #mobile-sticky-action-bar svg {
+  color: #0f172a !important;
+}
+
+/* Footer elements */
+.theme-day #main-app-footer {
+  background-color: #f1f5f9 !important;
+  border-top-color: #cbd5e1 !important;
+}
+.theme-day #main-app-footer * {
+  color: #334155 !important;
+}
+.theme-day #main-app-footer h3,
+.theme-day #main-app-footer h4,
+.theme-day #main-app-footer strong {
+  color: #0f172a !important;
+}
+.theme-day #main-app-footer #footer-legal-bar *,
+.theme-day #main-app-footer #footer-legal-bar p {
+  color: #64748b !important;
+}
+.theme-day #main-app-footer #theme-switch-row {
+  border-top-color: #cbd5e1 !important;
+}
+.theme-day #main-app-footer #theme-switch-row button {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+.theme-day #main-app-footer #theme-switch-row button:hover {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
