@@ -24,7 +24,7 @@ export const SERVICES: ServiceItem[] = [
     longDesc: "From simple kitchen sinks to clogged main lines, we use commercial snake/auger equipment to safely extract debris and restore full, continuous flow. We diagnose underlying root infestations or pipe sagging so you get a lasting solution rather than a quick coverup.",
     iconName: "DropletOff",
     pricingModel: "Upfront pricing (No hidden surprises)",
-    estimatedPrice: "",
+    estimatedPrice: "$175 - $350 (Standard Clogs)",
     symptoms: [
       "Water pooling around your feet in the shower",
       "Sinks taking several minutes to drain",
@@ -36,7 +36,8 @@ export const SERVICES: ServiceItem[] = [
       "Full hair, grease, and soap buildup extraction",
       "Post-clear drainage stress testing",
       "Preventative maintenance treatment advice"
-    ]
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "water-heaters",
@@ -45,7 +46,7 @@ export const SERVICES: ServiceItem[] = [
     longDesc: "If your hot water has disappeared, is rusty, or your heating tank is dripping, we can help. We repair elements, replace gas pilot assemblies, and install modern, high-efficiency traditional or tankless systems (Bradford White, Rinnai, Rheem) matching local rural well-water conditions.",
     iconName: "Flame",
     pricingModel: "Detailed upfront quote",
-    estimatedPrice: "",
+    estimatedPrice: "$250 - $600 (Repair) | $1,800+ (Replacement)",
     symptoms: [
       "Lukewarm shower temperature that goes cold rapidly",
       "Puddle of water pooling in secondary safety tray",
@@ -57,7 +58,8 @@ export const SERVICES: ServiceItem[] = [
       "High-durability sediment-resistant anodes for well-systems",
       "Safe pressure-relief valve calibration",
       "Disposal of old non-functional water heating units"
-    ]
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "leak-detection",
@@ -66,7 +68,7 @@ export const SERVICES: ServiceItem[] = [
     longDesc: "Leaky water lines can silently ravage crawlspaces, ceilings, and well-pumps. We perform thorough tests to isolate leaks in copper, PEX, and legacy galvanized hardware. We complete precise surgical repairs isolsating structural damage.",
     iconName: "Search",
     pricingModel: "Upfront quote first",
-    estimatedPrice: "",
+    estimatedPrice: "$150 - $400 (Isolate & Repair)",
     symptoms: [
       "Unexplained water bill spike",
       "Warm or soft spots on floor boards",
@@ -78,7 +80,8 @@ export const SERVICES: ServiceItem[] = [
       "Fast spot-repairs with high-grade copper or flexible PEX",
       "Wall/ceiling structure protection strategy",
       "Main water shut-off valve inspection"
-    ]
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "well-water-systems",
@@ -87,7 +90,7 @@ export const SERVICES: ServiceItem[] = [
     longDesc: "Living in southern Lancaster County means well-water properties are prominent. If your water pressure fluctuates, is surging, or you lose water entirely, the problem is often a sticking pressure switch, standard water tank failure, or filter blockage. We repair adjacent plumbing controls with clean, robust components.",
     iconName: "Gauge",
     pricingModel: "Upfront Diagnosis & Repairs",
-    estimatedPrice: "",
+    estimatedPrice: "$200 - $550 (Switch & Tank Service)",
     symptoms: [
       "Frequent water pressure drops that surge back",
       "Well pump clicking on and off rapidly (short-cycling)",
@@ -99,7 +102,8 @@ export const SERVICES: ServiceItem[] = [
       "Bladder type vertical thermal expansion tank installations",
       "Whole-house particulate sedimentation filter upgrades",
       "System purification testing suggestions"
-    ]
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1615840287214-7fe58a8bc685?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "toilets-faucets",
@@ -108,7 +112,7 @@ export const SERVICES: ServiceItem[] = [
     longDesc: "Running toilets can waste hundreds of gallons of well fluid a day, wearing out pumps. We restore toilet mechanisms (valves, flappers, wax rings) and install premium, leak-free kitchen/bathroom faucets. High-performance, water-saving fixtures built to withstand normal wear.",
     iconName: "Wrench",
     pricingModel: "Upfront flat-rate quote",
-    estimatedPrice: "",
+    estimatedPrice: "$125 - $275 (Restores & Installs)",
     symptoms: [
       "Toilet constantly hissing or refilling randomly",
       "Faucet consistently dripping even when tightened firmly",
@@ -120,7 +124,8 @@ export const SERVICES: ServiceItem[] = [
       "Elegant double-handle & pull-down utility faucet lines",
       "Wax ring replacements & solid structural flange resetting",
       "Quarter-turn solid brass angle valve replacements"
-    ]
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "pipe-replacement",
@@ -129,7 +134,7 @@ export const SERVICES: ServiceItem[] = [
     longDesc: "Old copper and scale-clogged galvanized pipes leak and choke off pressure. We perform partial or complete home repiping using flexible, food-safe PEX piping which does not corrode, does not scale, and successfully handles winter freeze-up flexing better than rigid metals.",
     iconName: "GitMerge",
     pricingModel: "Overall project quote",
-    estimatedPrice: "",
+    estimatedPrice: "$350+ (Spot Repairs) | Free Custom Replacements Quote",
     symptoms: [
       "Significant drop in hot and cold pressure globally",
       "Damp drywall stains in basement or floor tracks",
@@ -141,7 +146,8 @@ export const SERVICES: ServiceItem[] = [
       "Fast, less-destructive installation layout",
       "Sewer drop repairs & main incoming utility connection",
       "Thorough pressure isolation testing"
-    ]
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80"
   }
 ];
 

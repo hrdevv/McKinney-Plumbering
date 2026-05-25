@@ -4,6 +4,7 @@ import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
 import Hero from './components/Hero.tsx';
 import ServicesHub from './components/ServicesHub.tsx';
+import ProjectsPortfolio from './components/ProjectsPortfolio.tsx';
 import ServiceAreas from './components/ServiceAreas.tsx';
 import Reviews from './components/Reviews.tsx';
 import FAQ from './components/FAQ.tsx';
@@ -18,7 +19,7 @@ import { Phone, CheckCircle, ShieldAlert } from 'lucide-react';
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'night');
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'day');
 
   useEffect(() => {
     const root = document.documentElement;
@@ -56,6 +57,7 @@ export default function App() {
           >
             <Hero onOpenQuote={() => setIsQuoteOpen(true)} setActiveTab={setActiveTab} />
             <ServicesHub onOpenQuote={() => setIsQuoteOpen(true)} />
+            <ProjectsPortfolio onOpenQuote={() => setIsQuoteOpen(true)} />
             <ServiceAreas onOpenQuote={() => setIsQuoteOpen(true)} />
             <Reviews />
             <FAQ onOpenQuote={() => setIsQuoteOpen(true)} />
@@ -148,6 +150,8 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onOpenQuote={() => setIsQuoteOpen(true)}
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
       />
 
       {/* Primary content router workspace */}

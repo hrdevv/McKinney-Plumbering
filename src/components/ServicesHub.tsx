@@ -241,18 +241,23 @@ export default function ServicesHub({ onOpenQuote }: ServicesHubProps) {
             >
               <div className="space-y-4">
                 {/* Service Card Thumbnail */}
-                <div className="relative w-full h-40 rounded-xl overflow-hidden border border-slate-800/80 bg-slate-950 shrink-0">
-                  <picture>
-                    <source srcSet={`/src/assets/images/service-${srv.id}.webp`} type="image/webp" />
-                    <img
-                      src={`/src/assets/images/service-${srv.id}.webp`}
-                      alt={`${srv.title} Visual Representation`}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                    />
-                  </picture>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="relative w-full h-40 rounded-xl overflow-hidden border border-slate-800/80 bg-slate-950 shrink-0 text-center">
+                  <img
+                    src={`/src/assets/images/service-${srv.id}.webp`}
+                    alt={`${srv.title} Visual Representation`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                    onError={(e) => {
+                      // Fallback to recommended premium image if local bundle is not present
+                      if (srv.imageUrl) {
+                        (e.target as HTMLImageElement).src = srv.imageUrl;
+                      } else {
+                        (e.target as HTMLImageElement).src = "https://picsum.photos/seed/" + srv.id + "/600/400";
+                      }
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 {/* Header item */}

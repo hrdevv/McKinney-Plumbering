@@ -19,30 +19,6 @@
   }
 }
 
-/* Remove all Lovable branding, widgets, and UI elements */
-[class*="lovable"],
-[id*="lovable"],
-.lovable-logo,
-.edit-with-lovable,
-[data-testid*="lovable"],
-[data-lovable-widget],
-iframe[src*="lovable"],
-div[class*="lovableai"],
-button[aria-label*="lovable"],
-a[href*="lovable.com"],
-div[style*="lovable"],
-span[class*="edit-with"],
-.powered-by-lovable,
-[class*="lovable-widget"],
-[class*="edit-lovable"] {
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  height: 0 !important;
-  width: 0 !important;
-  opacity: 0 !important;
-}
-
 /* Custom micro-animations for high-fidelity interactive accents */
 @keyframes wiggle {
   0%, 100% { transform: rotate(0); }
@@ -73,6 +49,8 @@ span[class*="edit-with"],
 }
 
 /* Premium Light Theme overrides for Daylight Mode */
+body.theme-day,
+html.theme-day,
 .theme-day {
   background-color: #f8fafc !important;
   color: #0f172a !important;
@@ -128,29 +106,77 @@ span[class*="edit-with"],
   border-color: #cbd5e1 !important;
 }
 
-/* Override dark containers with clean white cards */
+/* Correctly escaped standard Tailwind arbitrary class selectors and alternating backgrounds */
+.theme-day .bg-\[\#091522\],
+.theme-day .bg-\[\#091522\]\/95 {
+  background-color: #f8fafc !important; /* light grey for section sections */
+}
+
+.theme-day .bg-\[\#0c1e30\],
+.theme-day .bg-\[\#0b1c2e\],
+.theme-day .bg-\[\#0b1c2e\]\/95,
+.theme-day .bg-\[\#0f2a44\],
+.theme-day .bg-\[\#0F2A44\],
+.theme-day .bg-\[\#0f2a44\]\/95,
+.theme-day .bg-\[\#0F2A44\]\/95 {
+  background-color: #ffffff !important; /* pure white for alternative sections and dialog boxes */
+}
+
+/* Elevated container card colors */
 .theme-day .bg-slate-950,
-.theme-day .bg-[#091522],
-.theme-day .bg-slate-950\/40,
 .theme-day .bg-slate-950\/80,
+.theme-day .bg-slate-900,
+.theme-day .bg-slate-850 {
+  background-color: #f1f5f9 !important; /* light gray container background over white sections */
+}
+
+/* Elevated transparent/half-tone container layers */
+.theme-day .bg-slate-950\/20,
+.theme-day .bg-slate-950\/25,
+.theme-day .bg-slate-950\/40,
+.theme-day .bg-slate-950\/50,
+.theme-day .bg-slate-950\/60,
 .theme-day .bg-slate-900\/40,
+.theme-day .bg-slate-900\/60,
 .theme-day .bg-slate-900\/65,
 .theme-day .bg-slate-900\/80 {
-  background-color: #f1f5f9 !important;
+  background-color: #f1f5f9 !important; /* light visual cards */
 }
 
-.theme-day .bg-slate-900,
-.theme-day .bg-[#0b1c2e],
-.theme-day .bg-[#0b1c2e]\/95,
-.theme-day .bg-[#0c1e30],
-.theme-day .bg-[#0F2A44],
-.theme-day .bg-[#0F2A44]\/95 {
+/* Also target major containers by ID as a fail-safe backup to prevent style-bleed */
+.theme-day #services-grid-hub,
+.theme-day #faq-accordions,
+.theme-day #customer-reviews-section,
+.theme-day #about-us-section,
+.theme-day #contact-portal-page {
+  background-color: #f8fafc !important;
+}
+
+.theme-day #service-catalogue-grid > div,
+.theme-day #service-area-contour {
   background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
 }
 
+/* Scrollbars in light mode */
+.theme-day::-webkit-scrollbar-track,
+.theme-day ::-webkit-scrollbar-track {
+  background: #f8fafc !important;
+}
+.theme-day::-webkit-scrollbar-thumb,
+.theme-day ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+}
+.theme-day::-webkit-scrollbar-thumb:hover,
+.theme-day ::-webkit-scrollbar-thumb:hover {
+  background: #E8581C !important;
+}
+
+/* Border overlays to high-contrast slate borders */
 .theme-day .border-slate-800,
 .theme-day .border-slate-801,
 .theme-day .border-slate-805,
+.theme-day .border-slate-810,
 .theme-day .border-slate-850,
 .theme-day .border-slate-755,
 .theme-day .border-slate-750,
@@ -285,3 +311,331 @@ span[class*="edit-with"],
   background-color: #f8fafc !important;
   border-color: #cbd5e1 !important;
 }
+
+/* Highly targeted refined Daylight Mode accents */
+
+/* 1. Header Navigation Button States */
+.theme-day #desktop-nav-links button {
+  color: #334155 !important;
+}
+.theme-day #desktop-nav-links button:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.theme-day #desktop-nav-links button.bg-slate-800 {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.theme-day #header-phone-button {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-day #header-phone-button:hover {
+  background-color: #f8fafc !important;
+}
+
+/* 2. Hero Action Buttons Outline styling */
+.theme-day #hero-estimate-cta {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+.theme-day #hero-estimate-cta:hover {
+  background-color: #f8fafc !important;
+}
+.theme-day .text-slate-250 {
+  color: #334155 !important;
+}
+
+/* 3. Emergency Crimson Alert Box inside Services Hub */
+.theme-day #service-emergency-alert {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%) !important;
+  border-color: #fca5a5 !important;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.05) !important;
+}
+.theme-day #service-emergency-alert h3,
+.theme-day #service-emergency-alert p,
+.theme-day #service-emergency-alert span,
+.theme-day #service-emergency-alert h4,
+.theme-day #service-emergency-alert div {
+  color: #991b1b !important;
+}
+.theme-day #service-emergency-alert button.bg-slate-950\/40 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+.theme-day #service-emergency-alert button.bg-slate-950\/40:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* 4. Form selects and option overrides to prevent dark background issues */
+.theme-day select option {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+.theme-day select option:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* 5. Reviews styling tweaks & group decoration elements */
+.theme-day .group svg.absolute.text-slate-800 {
+  color: #e2e8f0 !important;
+}
+.theme-day .group:hover svg.absolute.text-slate-800 {
+  color: rgba(232, 88, 28, 0.1) !important;
+}
+
+/* 6. Coverage result checkers background contrast */
+.theme-day #coverage-checker-result-box {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* 7. Well pump indicator schematic map representation inside Service Areas */
+.theme-day #service-area-contour {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-day #service-area-contour .bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* 8. Fix semantic text colors that would have bad contrast on light backgrounds */
+.theme-day .text-\[\#00E5A3\],
+.theme-day .text-emerald-200,
+.theme-day .text-emerald-300,
+.theme-day .text-emerald-400,
+.theme-day .text-emerald-500,
+.theme-day .text-emerald-505 {
+  color: #0d9488 !important; /* highly-readable dark teal green */
+}
+
+.theme-day .text-rose-300,
+.theme-day .text-rose-400,
+.theme-day .text-rose-450,
+.theme-day .text-rose-455,
+.theme-day .text-red-350,
+.theme-day .text-red-300,
+.theme-day .text-red-400,
+.theme-day .text-red-500 {
+  color: #b91c1c !important; /* readable dark crimson */
+}
+
+.theme-day .text-amber-300,
+.theme-day .text-amber-405,
+.theme-day .text-amber-400,
+.theme-day .text-amber-500 {
+  color: #c2410c !important; /* robust deep warm orange-brown */
+}
+
+/* 9. Light-theme color tint background configurations to soften transparency rules */
+.theme-day .bg-emerald-500\/10,
+.theme-day .bg-emerald-500\/5,
+.theme-day .bg-emerald-500\/20 {
+  background-color: rgba(13, 148, 136, 0.08) !important;
+}
+
+.theme-day .bg-rose-500\/10,
+.theme-day .bg-rose-500\/5,
+.theme-day .bg-red-500\/10,
+.theme-day .bg-red-500\/5 {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+}
+
+.theme-day .bg-amber-500\/10,
+.theme-day .bg-amber-500\/5,
+.theme-day .bg-\[\#E8581C\]\/10,
+.theme-day .bg-\[\#E8581C\]\/15 {
+  background-color: rgba(232, 88, 28, 0.08) !important;
+}
+
+/* 10. Guarantee text element inside brand-orange gradients remains pristine bright white */
+.theme-day [class*="bg-gradient-to-r"] .text-white,
+.theme-day [class*="bg-gradient-to-br"] .text-white,
+.theme-day [class*="bg-gradient-to-tr"] .text-white,
+.theme-day [class*="from-\[\#M"] .text-white,
+.theme-day .from-\[\#E8581C\] .text-white,
+.theme-day .from-\[\#E8581C\] svg,
+.theme-day .bg-\[\#E8581C\] .text-white,
+.theme-day button.bg-\[\#E8581C\],
+.theme-day button[class*="bg-\[\#E8581C\]"],
+.theme-day button[class*="bg-\[\#E8581C\]"] span {
+  color: #ffffff !important;
+}
+
+.theme-day button.bg-red-600,
+.theme-day button.bg-red-600 *,
+.theme-day a.bg-emerald-600,
+.theme-day a.bg-emerald-600 *,
+.theme-day a.bg-gradient-to-r .text-white,
+.theme-day button.bg-gradient-to-r .text-white {
+  color: #ffffff !important;
+}
+
+/* 11. Custom override to preserve white colors in McKinney custom orange/amber buttons */
+.theme-day .bg-gradient-to-r.from-\[\#E8581C\],
+.theme-day .bg-gradient-to-r.from-\[\#E8581C\] *,
+.theme-day .bg-gradient-to-br.from-\[\#E8581C\],
+.theme-day .bg-gradient-to-br.from-\[\#E8581C\] *,
+.theme-day .bg-gradient-to-r.from-orange-600,
+.theme-day .bg-gradient-to-r.from-orange-600 * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* 12. Fix Dark button states (e.g. troubleshooting prompt analyst submit buttons) in light mode */
+.theme-day .bg-gradient-to-r.from-slate-900,
+.theme-day .bg-gradient-to-r.from-slate-950 {
+  background: #1e293b !important;
+  background-image: none !important;
+  border-color: #334155 !important;
+}
+.theme-day .bg-gradient-to-r.from-slate-900 *,
+.theme-day .bg-gradient-to-r.from-slate-900 span,
+.theme-day .bg-gradient-to-r.from-slate-950 *,
+.theme-day .bg-gradient-to-r.from-slate-950 span {
+  color: #ffffff !important;
+}
+
+/* 13. High-Contrast brand color exceptions for Daylight Mode symbols & buttons */
+.theme-day #header-brand-logo *,
+.theme-day #header-brand-logo svg {
+  color: #ffffff !important;
+}
+
+.theme-day #footer-branding-block .bg-gradient-to-br *,
+.theme-day #footer-branding-block .bg-gradient-to-br svg {
+  color: #ffffff !important;
+}
+
+.theme-day #footer-branding-block span.text-white {
+  color: #0f172a !important;
+}
+
+.theme-day #main-app-footer #footer-quote-btn {
+  background-color: #E8581C !important;
+  color: #ffffff !important;
+  border-color: #d14914 !important;
+}
+
+.theme-day #main-app-footer #footer-quote-btn:hover {
+  background-color: #d14914 !important;
+}
+
+/* 14. Projects Portfolio Design Adjustments for Daylight Mode */
+.theme-day #projects-portfolio-section {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section h2,
+.theme-day #projects-portfolio-section h3 {
+  color: #0f172a !important;
+}
+.theme-day #projects-portfolio-section p,
+.theme-day #projects-portfolio-section span,
+.theme-day #projects-portfolio-section div {
+  color: #334155 !important;
+}
+.theme-day #projects-portfolio-section .bg-\[\#0c1e30\] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .bg-\[\#091522\]\/95 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .bg-slate-950\/40 {
+  background-color: #f8fafc !important;
+}
+.theme-day #projects-portfolio-section .bg-slate-950\/50 {
+  background-color: #ffffff !important;
+}
+.theme-day #projects-portfolio-section .border-slate-800 {
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .border-slate-800\/80 {
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .bg-slate-900 {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .bg-slate-900\/40 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .text-slate-350,
+.theme-day #projects-portfolio-section .text-slate-300,
+.theme-day #projects-portfolio-section .text-slate-400 {
+  color: #475569 !important;
+}
+.theme-day #projects-portfolio-section button.bg-slate-900:hover {
+  background-color: #cbd5e1 !important;
+}
+.theme-day #projects-portfolio-section .bg-red-500/15 {
+  background-color: rgba(220, 38, 38, 0.1) !important;
+}
+.theme-day #projects-portfolio-section .bg-red-500/15 span,
+.theme-day #projects-portfolio-section .bg-red-500/15 * {
+  color: #b91c1c !important;
+}
+.theme-day #projects-portfolio-section .bg-emerald-500/15 {
+  background-color: rgba(5, 150, 105, 0.1) !important;
+}
+.theme-day #projects-portfolio-section .bg-emerald-500/15 span,
+.theme-day #projects-portfolio-section .bg-emerald-500/15 * {
+  color: #047857 !important;
+}
+
+/* 15. Absolute Clear Daylight Mode Overrides for Theme Toggle Buttons */
+.theme-day #header-theme-toggle {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-day #header-theme-toggle span {
+  color: #0f172a !important;
+}
+.theme-day #header-theme-toggle svg {
+  color: #0f172a !important;
+}
+.theme-day #header-theme-toggle:hover {
+  background-color: #cbd5e1 !important;
+}
+
+.theme-day #theme-mode-toggle-button {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-day #theme-mode-toggle-button span {
+  color: #0f172a !important;
+}
+.theme-day #theme-mode-toggle-button svg {
+  color: #0f172a !important;
+}
+.theme-day #theme-mode-toggle-button:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* 16. Navigation link contrast in Daylight Mode */
+.theme-day #desktop-nav-links button {
+  color: #334155 !important;
+}
+.theme-day #desktop-nav-links button:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.theme-day #desktop-nav-links button[class*="bg-slate-800"],
+.theme-day #desktop-nav-links button.bg-slate-800 {
+  background-color: #0f2a44 !important;
+  color: #ffffff !important;
+}
+

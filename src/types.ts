@@ -8,6 +8,7 @@ export interface ServiceItem {
   estimatedPrice: string;
   symptoms: string[];
   features: string[];
+  imageUrl?: string;
 }
 
 export interface Testimonial {

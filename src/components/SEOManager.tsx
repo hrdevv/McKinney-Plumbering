@@ -169,6 +169,7 @@ export default function SEOManager({ activeTab }: SEOManagerProps) {
         "mainEntity": FAQS.map(faq => ({
           "@type": "Question",
           "name": faq.question,
+          "url": `${origin}/#faq-item-${faq.id}`,
           "acceptedAnswer": {
             "@type": "Answer",
             "text": faq.answer

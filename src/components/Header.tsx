@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Menu, X, ShieldCheck, Clock, MapPin } from 'lucide-react';
+import { Phone, Menu, X, ShieldCheck, Clock, MapPin, Sun, Moon } from 'lucide-react';
 import { BUSINESS_INFO } from '../data.ts';
 
 interface HeaderProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
   onOpenQuote: () => void;
+  theme?: string;
+  onToggleTheme?: () => void;
 }
 
-export default function Header({ activeTab, setActiveTab, onOpenQuote }: HeaderProps) {
+export default function Header({ activeTab, setActiveTab, onOpenQuote, theme = 'day', onToggleTheme }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -61,7 +63,28 @@ export default function Header({ activeTab, setActiveTab, onOpenQuote }: HeaderP
               <Clock className="w-3.5 h-3.5 text-slate-500" />
               Hours: Mon - Sat
             </span>
-            <span>Emergency Dispatch Available</span>
+            <span className="hidden sm:inline-block">Emergency Dispatch Available</span>
+            
+            {onToggleTheme && (
+              <button
+                onClick={onToggleTheme}
+                id="header-theme-toggle"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer select-none text-[10px] font-black uppercase tracking-wider h-7"
+                title={theme === 'day' ? 'Switch to Night mode' : 'Switch to Day mode'}
+              >
+                {theme === 'day' ? (
+                  <>
+                    <Moon className="w-3 h-3 text-amber-500 fill-amber-500/10" />
+                    <span>Night Vision</span>
+                  </>
+                ) : (
+                  <>
+                    <Sun className="w-3 h-3 text-[#E8581C]" />
+                    <span>Daylight</span>
+                  </>
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>
